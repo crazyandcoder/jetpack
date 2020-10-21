@@ -8,9 +8,20 @@ import com.crazyandcoder.top.jetpackdemojava.R;
 
 public class LifeCycleActivity extends AppCompatActivity {
 
+    private MyLocationListener locationListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_life_cycle);
+
+        locationListener = new MyLocationListener(this, new MyLocationListener.OnLocationChangeListener() {
+            @Override
+            public void onChange(double lat, double lng) {
+
+            }
+        });
+
+        getLifecycle().addObserver(locationListener);
     }
 }
