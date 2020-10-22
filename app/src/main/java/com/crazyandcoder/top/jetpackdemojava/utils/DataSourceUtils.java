@@ -11,7 +11,8 @@ import java.util.List;
 public class DataSourceUtils {
     public static List<JetpackItemBean> getJetpackItems() {
         List<JetpackItemBean> list = new ArrayList<>();
-        list.add(new JetpackItemBean(TJetpack.LIFECYCLE, "LIFECYCLE"));
+        list.add(new JetpackItemBean(TJetpack.LIFECYCLE, "Lifecycle"));
+        list.add(new JetpackItemBean(TJetpack.VIEW_MODEL, "ViewModel"));
         return list;
     }
 

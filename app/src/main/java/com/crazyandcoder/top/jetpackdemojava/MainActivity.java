@@ -38,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
         jetpackAdapter.setOnItemClickListener(new JetpackAdapter.OnItemClickListener() {
             @Override
             public void onClick(int position, JetpackItemBean item) {
-                startActivity(new Intent(MainActivity.this, clsList.get(item.getType())));
+                if (clsList.get(item.getType()) != null) {
+                    startActivity(new Intent(MainActivity.this, clsList.get(item.getType())));
+                }
             }
         });
 
