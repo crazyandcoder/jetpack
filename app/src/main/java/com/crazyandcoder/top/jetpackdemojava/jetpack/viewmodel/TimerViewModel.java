@@ -4,6 +4,8 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.crazyandcoder.top.jetpackdemojava.utils.LogUtils;
@@ -11,26 +13,27 @@ import com.crazyandcoder.top.jetpackdemojava.utils.LogUtils;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class TimerViewModel extends  ViewModel {
+public class TimerViewModel extends ViewModel {
 
 
     private Timer timer;
-    private int currentSecond;
     private OnTimeChangeListener listener;
 
+    private MutableLiveData<Integer> currentSecond;
+
+    public LiveData<Integer> getCurrentSecond() {
+        if (currentSecond == null) {
+            currentSecond = new MutableLiveData<>();
+        }
+        return currentSecond;
+    }
 
 
     public void startTiming() {
         if (timer == null) {
-            timer = new Timer();
-            currentSecond = 0;
             TimerTask task = new TimerTask() {
                 @Override
                 public void run() {
-                    currentSecond++;
-                    if (listener != null) {
-                        listener.onTimeChange(currentSecond);
-                    }
                 }
             };
             timer.schedule(task, 1000, 1000);

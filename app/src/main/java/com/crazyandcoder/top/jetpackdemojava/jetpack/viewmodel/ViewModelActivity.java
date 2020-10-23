@@ -1,6 +1,8 @@
 package com.crazyandcoder.top.jetpackdemojava.jetpack.viewmodel;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -20,17 +22,15 @@ public class ViewModelActivity extends AppCompatActivity {
 
 
         TimerViewModel viewModel = new ViewModelProvider(this).get(TimerViewModel.class);
-        viewModel.setOnTimeChangeListener(new TimerViewModel.OnTimeChangeListener() {
+        MutableLiveData<Integer> liveData= (MutableLiveData<Integer>) viewModel.getCurrentSecond();
+        liveData.observe(this, new Observer<Integer>() {
             @Override
-            public void onTimeChange(final int second) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        textView.setText("" + second);
-                    }
-                });
+            public void onChanged(Integer integer) {
+                textView.setText(""+integer);
             }
         });
+
+
         viewModel.startTiming();
     }
 
