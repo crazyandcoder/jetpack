@@ -10,6 +10,10 @@
         <variable
             name="book"
             type="com.crazyandcoder.top.jetpackdemojava.bean.Book" />
+
+        <variable
+            name="EventHandle"
+            type="com.crazyandcoder.top.jetpackdemojava.jetpack.databinding.EventHandleListener" />
     </data>
 
     <LinearLayout
@@ -23,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/colorAccent"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:paddingLeft="30dp"
             android:text="@{book.title}"
             android:textColor="@color/white" />
@@ -35,7 +39,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@color/colorAccent"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:paddingLeft="30dp"
             android:text="@{book.author}"
             android:textColor="@color/white" />
@@ -46,9 +50,21 @@
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@color/colorAccent"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:paddingLeft="30dp"
             android:text="@{BookUtils.getRating(book.rating)}"
+            android:textColor="@color/white" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="@{EventHandle::onButtonClicked}"
+            android:paddingLeft="30dp"
+            android:text="点击事件"
             android:textColor="@color/white" />
 
 
