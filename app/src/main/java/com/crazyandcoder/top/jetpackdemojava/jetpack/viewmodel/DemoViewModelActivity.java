@@ -10,14 +10,14 @@ import android.widget.TextView;
 
 import com.crazyandcoder.top.jetpackdemojava.R;
 
-public class ViewModelActivity extends AppCompatActivity {
+public class DemoViewModelActivity extends AppCompatActivity {
 
     private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_model);
+        setContentView(R.layout.activity_demo_view_model);
         textView = findViewById(R.id.textView);
 
 

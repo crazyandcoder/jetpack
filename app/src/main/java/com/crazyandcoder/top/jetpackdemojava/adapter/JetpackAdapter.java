@@ -25,7 +25,7 @@ public class JetpackAdapter extends RecyclerView.Adapter<JetpackAdapter.JetpackV
     @NonNull
     @Override
     public JetpackViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_jetpack, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.demo_item_jetpack, parent, false);
         return new JetpackViewHolder(view);
     }
 

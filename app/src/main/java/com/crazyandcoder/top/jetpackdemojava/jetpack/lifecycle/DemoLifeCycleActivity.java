@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import com.crazyandcoder.top.jetpackdemojava.R;
 
-public class LifeCycleActivity extends AppCompatActivity {
+public class DemoLifeCycleActivity extends AppCompatActivity {
 
     private MyLocationListener locationListener;
     private Button start;
@@ -18,21 +18,21 @@ public class LifeCycleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_life_cycle);
+        setContentView(R.layout.activity_demo_life_cycle);
         start = findViewById(R.id.start);
         stop = findViewById(R.id.stop);
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LifeCycleActivity.this, LifecycleServiceTest.class);
+                Intent intent = new Intent(DemoLifeCycleActivity.this, LifecycleServiceTest.class);
                 startService(intent);
             }
         });
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LifeCycleActivity.this, LifecycleServiceTest.class);
+                Intent intent = new Intent(DemoLifeCycleActivity.this, LifecycleServiceTest.class);
                 stopService(intent);
             }
         });

@@ -10,8 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".jetpack.viewmodel.ViewModelActivity"></activity>
-        <activity android:name=".jetpack.lifecycle.LifeCycleActivity" />
+        <activity android:name=".jetpack.databinding.DemoDataBindingActivity"></activity>
+        <activity android:name=".jetpack.viewmodel.DemoViewModelActivity" />
+        <activity android:name=".jetpack.lifecycle.DemoLifeCycleActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

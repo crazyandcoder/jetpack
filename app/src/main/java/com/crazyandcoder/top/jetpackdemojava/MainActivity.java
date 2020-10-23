@@ -9,10 +9,8 @@ import android.os.Bundle;
 
 import com.crazyandcoder.top.jetpackdemojava.adapter.JetpackAdapter;
 import com.crazyandcoder.top.jetpackdemojava.bean.JetpackItemBean;
-import com.crazyandcoder.top.jetpackdemojava.jetpack.lifecycle.LifeCycleActivity;
 import com.crazyandcoder.top.jetpackdemojava.utils.DataSourceUtils;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
